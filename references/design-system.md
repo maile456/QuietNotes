@@ -1,70 +1,34 @@
-# Bear Notes 设计规则
+# Bear-Inspired Design System
 
-## 识别特征
+## Reference Signature
 
-核心是编辑式阅读，不是文档产品的模块化展示。文字有从容的呼吸，文章索引紧凑，引用与脚注清楚；留白服务于阅读位置和内容分组。
+Reference: [Bear](https://bear.app/). Source HTML/CSS and its product scene were inspected on 2026-10-29. This is a composition reference, not a claim of pixel-identical reproduction. Use original branding, copy, product content, and licensed assets.
 
-三个稳定识别点已足够：中性纸白上的陶红链接、文章标题的克制衬线、带细竖线的引用或旁注。保留主内容的朴素，不把这些识别点重复装饰到每个按钮、边框和背景。
+- White `#fff`, muted band `#F3F5F7`, body `#444`, secondary gray, coral `#DD4C4F`.
+- Rounded humanist **sans-serif** titles and body. The official custom fonts are not bundled; use system sans or a licensed local font. Do not substitute an editorial serif theme.
+- A roughly 960px content container with 32px desktop gutters and a 64px fixed header. Navigation is plain text, restrained, and separated by generous whitespace.
+- Centered product heading around 51px, secondary line around 24px. Device selection is around 24px with a loose colored underline; a single coral call to action sits below.
+- Main product window is the dominant visual: charcoal sidebar about 17%, note list about 27%, editor about 56%. It has a delicate edge and deep soft shadow, not a thick decorative frame.
+- Lower features alternate roughly 39% copy and 59% visual, separated by large section gaps, up to 160px. Feature headings stay near 34–40px. Small blue, violet, and coral details distinguish content without tinting the whole page.
 
-参考来源为 [Bear](https://bear.app/)，仅作为方向说明。使用原创页面构图、文案与资产；需要对齐官网当前版本时另行查看真实页面。
+## Product Homepage Mode
 
-## 按项目适配
+Use `docs/index.html` as the composition starting point, not `docs/workspace/index.html`. Keep product identity and product preview in the first viewport. Match reference hierarchy before adding further sections. Include realistic note titles, a selected row, image content, tags, and editor text. The preview must still look like a coherent app when interactive.
 
-| 项目 | 主要结构 | 重点 | 避免 |
-| --- | --- | --- | --- |
-| 个人博客 | 小型站头、简短作者介绍、文章索引、页脚 | 日期和标题容易扫描，摘要与标签不过载 | 第一屏只有巨幅自我介绍 |
-| 随笔与作品文字 | 分类索引、文章正文、前后篇导航 | 标题、引文、配图节奏 | 每段文字放进圆角卡片 |
-| 知识笔记 | 笔记树或主题列表、搜索、正文、可选关联链接 | 当前路径、更新日期、锚点和交叉引用 | 将导航层级伪装成营销分区 |
-| 长文阅读 | 正文、桌面可选目录、作者信息、脚注 | 阅读行长、当前位置、可靠返回目录 | 移动端强行保留左右侧栏 |
+Device tabs change the preview layout, not the whole site's media breakpoint. Desktop shows three panes; tablet can omit the sidebar; phone shows the note. Keep the same content across devices, stable scene height, and working arrow-key tab selection. Do not imply a downloadable native application when the sample only opens a browser workspace.
 
-业务后台、复杂表格或交易工具以任务效率为主；仅借用字体和色彩时不强行应用文章版式。
+Use actual features, themes, and clear page sections. Avoid card grids for major bands. If a feature visual is framed, it is a product tool or document, not a card wrapping another card layout.
 
-## 布局与排版
+## Blog And Reading Mode
 
-- 站点外框建议 `68rem`，两侧最小留白 `1rem`；宽屏文章正文仍控制在 `42rem` 左右。中文主段落约 28-38 个汉字一行，按实际字体检查，避免机械地把 `ch` 当成中文字符宽度。
-- 正文 `1rem` 或 `1.0625rem`，行高 `1.8-1.9`；连续阅读段落间距 `1.1-1.4em`。界面控件维持 `0.875-1rem`，不把长文行高套在工具栏上。
-- 正文标题建议 `2rem`，二级标题 `1.5rem`，三级标题 `1.125rem`。标题行高约 `1.3-1.5`，所有字距为 `0`，不随视口宽度连续缩放字号。
-- 正文默认系统无衬线字体；展示标题可采用系统衬线回退。若中文宋体显得细弱或不齐，保留无衬线正文与标题，使用字重、间距和陶红细节形成层次。
-- 用 `0.5 / 0.75 / 1 / 1.5 / 2 / 3rem` 间距阶梯。文章列表行间距小于分区间距，时间、标签等元信息退后但仍清晰可读。
-- 桌面目录侧栏建议 `12-14rem`；空间不足时变为可展开目录或正文前的锚点列表。避免固定目录遮挡内容，锚点考虑粘性站头的 `scroll-margin-top`。
-- 不给页面大区块加浮动边框或阴影。真正需要框定的代码块、提示和对话框圆角为 `4-8px`。
+Preserve the same white-gray/coral/sans identity while prioritizing article content. Use a flat date/title/excerpt index, optional modest author introduction, a 42rem-or-smaller reading column, and small category labels. Default body 16–17px, line-height 1.8–1.9 for Chinese prose. A compact reader heading should not adopt homepage hero dimensions. Quotes use a thin line, not colored floating cards.
 
-## 颜色与主题
+Only include search, table of contents, bookmarks, and theme switching when the project needs them. Keep article content truthful; demo content must not be presented as the user's biography or publications.
 
-| 语义 | 亮色 | 暗色 |
-| --- | --- | --- |
-| 页面 | `#fafaf9` | `#181b19` |
-| 阅读表面 | `#ffffff` | `#202521` |
-| 正文 | `#242724` | `#edf0e9` |
-| 次级文字 | `#60665f` | `#b2bab0` |
-| 陶红强调 | `#a23840` | `#f1a7a9` |
-| 绿色状态 | `#246948` | `#9ed5b2` |
-| 分隔线 | `#d8ddd7` | `#495249` |
+## Responsive And Interaction Checks
 
-强调色用于链接、选中和少数动作，不把红色铺成全站背景。不同语义应有文字、图标或形状区分，不只依赖红绿。普通正文和次级文字的目标对比度至少为 4.5:1，控件边界和焦点至少为 3:1；分隔线不承担唯一的控件识别任务。组合新颜色后重新验证，不把默认色表当成任意叠加都通过的保证。
-
-暗色使用绿色倾向的炭黑和偏白文字，不反转图片或强行增加霓虹光。主题切换尊重已有方案；新增时明确区分系统、亮色与暗色并保存偏好，避免首屏闪烁。
-
-## 组件细节
-
-**文章索引：** 每条以标题为最大点击目标，日期保持稳定列宽，摘要最多数行并自然截断。分类和标签是可选辅助，不让空标签占位。列表本身不需要阴影和独立卡片外壳。
-
-**阅读正文：** 链接保留下划线或其他持续可识别线索。引用用细竖线和间距，不用整块高饱和底色。脚注采用可返回的锚点，参考来源链接真实可访问。长 URL 和代码允许换行或局部横向滚动，页面本身不横向溢出。
-
-**目录：** 当前章节用陶红标记加字重，不能只有颜色变化。滚动定位不抢夺焦点；点击目录后地址锚点可分享，浏览器后退符合预期。
-
-**搜索与筛选：** 输入框有可感知标签，清除操作可键盘触发；搜索结果保留标题、摘要和上下文。没有结果时显示明确状态并保留查询，筛选器与搜索共同生效。
-
-**笔记与关联：** 双向链接仅在确有数据关系时显示。没有关联的文章不显示虚构连接。更新日期与发布时间区分，用真实内容驱动索引。
-
-**操作按钮：** 收藏、复制链接和主题切换使用现有图标库与简短提示。保存、复制成功和错误状态有明确反馈，图标按钮有可访问名称与可见焦点，触控热区建议至少 `44px`。
-
-## 小屏与动态
-
-- `48rem` 以下通常转为单列；具体断点由内容是否拥挤决定，不以设备名称决定。标题、标签和站点名称允许换行，操作按钮不挤压正文。
-- 不把桌面目录缩成极窄竖栏；用 `<details>` 或现有可访问折叠组件展示。筛选器溢出时换行或收进菜单，选中项仍应可见。
-- 动态限于短暂状态反馈，不加入自动漂浮、打字机正文或滚动劫持。阅读进度是可选辅助，不能覆盖站头或截断触控区。
-
-## 交付前重点
-
-用真实长标题、中文正文、代码、列表、配图和引用检查阅读样式；再测空数据和搜索无结果。检查亮暗主题、窄屏、键盘目录与焦点返回。截图只能证明视觉，搜索、书签、链接、主题和目录仍需实际操作验证。
+- 1440/768/390/360px: no horizontal page overflow, lost labels, clipped dialog controls, or unreadable sidebar text. Narrow layouts may reduce panes rather than shrink text indefinitely.
+- No continuously viewport-scaled type, negative tracking, excessive border radius, or all-beige/dark-slate page palette.
+- Each label is associated with its input. Search offers an empty state. New-note actions validate and persist only where implemented. Storage failures are reported without crashing.
+- Device tabs expose `role=tab`, selected state, controlled panel, and keyboard focus. Dialogs close on Escape and return focus. Show visible keyboard focus and honor reduced-motion preferences.
+- Verify product images load and retain a deliberate crop; inspect the homepage and workspace separately.

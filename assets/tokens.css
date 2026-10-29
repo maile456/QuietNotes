@@ -1,68 +1,36 @@
-/* Optional scoped starting values; map into an existing token system as needed. */
+/* Scoped optional starting values; preserve the host project's token system. */
 [data-style="quiet-notes"] {
   color-scheme: light;
-  --bn-bg: #fafaf9;
-  --bn-surface: #ffffff;
-  --bn-surface-muted: #f0f2ee;
-  --bn-text: #242724;
-  --bn-text-muted: #60665f;
-  --bn-accent: #a23840;
-  --bn-accent-soft: #f7e7e9;
-  --bn-on-accent: #ffffff;
-  --bn-positive: #246948;
-  --bn-positive-soft: #e8f2eb;
-  --bn-border: #d8ddd7;
-  --bn-control-border: #747c72;
-  --bn-focus: #a23840;
-  --bn-font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --bn-font-heading: Georgia, "Noto Serif CJK SC", "Songti SC", SimSun, serif;
-  --bn-font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
-  --bn-font-ui: 0.875rem;
-  --bn-font-body-size: 1.0625rem;
-  --bn-font-title: 2rem;
-  --bn-font-h2: 1.5rem;
-  --bn-font-h3: 1.125rem;
-  --bn-leading-body: 1.85;
-  --bn-leading-ui: 1.5;
-  --bn-leading-heading: 1.4;
-  --bn-tracking: 0;
-  --bn-reading-width: 42rem;
-  --bn-site-width: 68rem;
-  --bn-toc-width: 13rem;
-  --bn-page-gutter: 1rem;
-  --bn-space-1: 0.5rem;
-  --bn-space-2: 0.75rem;
-  --bn-space-3: 1rem;
-  --bn-space-4: 1.5rem;
-  --bn-space-5: 2rem;
-  --bn-space-6: 3rem;
-  --bn-radius-sm: 4px;
-  --bn-radius-md: 8px;
-  --bn-focus-width: 2px;
-  --bn-focus-offset: 3px;
-  --bn-touch-target: 44px;
-  --bn-motion-duration: 120ms;
+  --qn-bg: #ffffff;
+  --qn-surface: #ffffff;
+  --qn-muted: #f3f5f7;
+  --qn-text: #444444;
+  --qn-secondary: #72767b;
+  --qn-accent: #dd4c4f;
+  --qn-line: #e4e5e6;
+  --qn-control: #94999d;
+  --qn-focus: #a7434b;
+  --qn-header: #ffffffdf;
+  --qn-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --qn-font-mono: ui-monospace, "Cascadia Code", Consolas, monospace;
+  --qn-site-width: 60rem;
+  --qn-reading-width: 42rem;
+  --qn-body-size: 1rem;
+  --qn-body-leading: 1.7;
+  --qn-heading-leading: 1.2;
+  --qn-radius: 8px;
+  --qn-tracking: 0;
 }
-
 [data-style="quiet-notes"][data-theme="dark"] {
   color-scheme: dark;
-  --bn-bg: #181b19;
-  --bn-surface: #202521;
-  --bn-surface-muted: #2b332d;
-  --bn-text: #edf0e9;
-  --bn-text-muted: #b2bab0;
-  --bn-accent: #f1a7a9;
-  --bn-accent-soft: #3f292e;
-  --bn-on-accent: #241b1d;
-  --bn-positive: #9ed5b2;
-  --bn-positive-soft: #253b2d;
-  --bn-border: #495249;
-  --bn-control-border: #85917f;
-  --bn-focus: #f1a7a9;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-style="quiet-notes"] {
-    --bn-motion-duration: 0ms;
-  }
+  --qn-bg: #202224;
+  --qn-surface: #292c2e;
+  --qn-muted: #282b2d;
+  --qn-text: #e6e8e9;
+  --qn-secondary: #b0b5ba;
+  --qn-accent: #f0a0a5;
+  --qn-line: #44494d;
+  --qn-control: #858d93;
+  --qn-focus: #f0a0a5;
+  --qn-header: #202224e8;
 }

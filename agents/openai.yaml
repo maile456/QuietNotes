@@ -1,4 +1,4 @@
 interface:
-  display_name: "QuietNotes · 温暖克制的阅读界面"
-  short_description: "为博客、长文和知识笔记建立温暖克制、舒适易读且有辨识度的编辑式界面"
-  default_prompt: "使用 $quiet-notes 为我的项目设计温暖克制、内容优先的阅读界面，并保留已有框架与功能。"
+  display_name: "QuietNotes · Bear 式安静记录"
+  short_description: "白灰画布、珊瑚红细节与无衬线排版，适合笔记产品和内容阅读"
+  default_prompt: "使用 $quiet-notes，按 Bear 的留白、无衬线字体和笔记结构设计我的前端，保留自己的品牌与已有功能。"

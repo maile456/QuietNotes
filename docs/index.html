@@ -1,85 +1,44 @@
 <!doctype html>
 <html lang="zh-CN" data-style="quiet-notes" data-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="description" content="QuietNotes 闲页，maile123 的博客。">
-  <title>QuietNotes 闲页 · maile123 的博客</title>
-  <link rel="stylesheet" href="tokens.css">
-  <link rel="stylesheet" href="styles.css">
-  <script defer src="vendor/lucide.min.js"></script>
-  <script defer src="app.js"></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="light dark">
+  <meta name="description" content="QuietNotes，安静记录、轻松整理。一个原创的笔记产品前端示例。"><title>QuietNotes · 让好想法，安静地生长</title>
+  <link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="styles.css">
+  <script>try{var q=localStorage.getItem('quietnotes-site-theme');if(q==='light'||q==='dark')document.documentElement.dataset.theme=q;}catch(e){}</script>
+  <script defer src="vendor/lucide.min.js"></script><script defer src="app.js"></script>
 </head>
 <body>
-  <a class="skip-link" href="#journal">跳到文章</a>
-  <header class="site-header page-width">
-    <a class="wordmark" href="#top" aria-label="QuietNotes 首页"><span class="wordmark-symbol">q.</span><span>QuietNotes<span class="wordmark-divider">/</span>闲页</span></a>
-    <nav class="header-nav" aria-label="主导航">
-      <a class="nav-current" href="#journal">文章</a>
-      <button class="nav-saved" id="saved-filter" type="button" aria-pressed="false"><i data-lucide="bookmark" aria-hidden="true"></i><span>收藏</span><span id="saved-count" class="saved-count">0</span></button>
-      <a class="nav-about" href="#about">关于</a>
-      <button class="icon-button theme-toggle" id="theme-toggle" type="button" aria-label="切换到暗色主题" title="切换到暗色主题" aria-pressed="false"><i data-lucide="moon" aria-hidden="true"></i></button>
-    </nav>
-  </header>
-
-  <main id="top" class="page-width">
-    <section class="intro" aria-labelledby="page-title">
-      <div class="intro-heading"><p class="eyebrow">MAILE123 / A PERSONAL JOURNAL</p><h1 id="page-title">QuietNotes<span class="title-divider">/</span><span lang="zh-CN">闲页</span></h1></div>
-      <p class="intro-note">写下此刻，留给以后。<br><span>代码、阅读，以及一些平常的小事。</span></p>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header"><div class="header-inner wrapper">
+    <a class="brand" href="#top" aria-label="QuietNotes 首页"><span class="brand-mark" aria-hidden="true"><i data-lucide="notebook-pen"></i></span><strong>QuietNotes</strong></a>
+    <nav class="desktop-nav" aria-label="主导航"><a href="#features">功能</a><a href="#themes">主题</a><a href="#start">开始使用</a><a href="#faq">常见问题</a></nav>
+    <div class="header-actions"><button class="icon-button" id="theme-toggle" type="button" title="切换到暗色主题" aria-label="切换到暗色主题"><i data-lucide="moon" aria-hidden="true"></i></button><button class="icon-button mobile-menu-toggle" id="menu-toggle" type="button" aria-label="展开导航" aria-expanded="false" aria-controls="mobile-nav"><i data-lucide="menu" aria-hidden="true"></i></button></div>
+  </div><nav class="mobile-nav wrapper" id="mobile-nav" aria-label="移动导航" hidden><a href="#features">功能</a><a href="#themes">主题</a><a href="#start">开始使用</a><a href="#faq">常见问题</a><a href="workspace/index.html">打开阅读空间</a></nav></header>
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrapper hero-intro"><h1 id="hero-title">QuietNotes</h1><p class="hero-subtitle">让好想法，<span>安静地生长。</span></p>
+        <div class="device-tabs" role="tablist" aria-label="预览设备"><button role="tab" id="tab-desktop" aria-controls="product-preview" aria-selected="true" tabindex="0" data-device="desktop"><i data-lucide="laptop" aria-hidden="true"></i>电脑</button><button role="tab" id="tab-phone" aria-controls="product-preview" aria-selected="false" tabindex="-1" data-device="phone"><i data-lucide="smartphone" aria-hidden="true"></i>手机</button><button role="tab" id="tab-tablet" aria-controls="product-preview" aria-selected="false" tabindex="-1" data-device="tablet"><i data-lucide="tablet" aria-hidden="true"></i>平板</button></div>
+        <a class="primary-button" href="workspace/index.html"><i data-lucide="book-open" aria-hidden="true"></i>打开阅读空间<i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+      </div>
+      <div class="product-stage" data-device="desktop"><div class="product-window" id="product-preview" role="tabpanel" aria-labelledby="tab-desktop" data-preview-theme="light">
+        <aside class="note-sidebar" aria-label="笔记分类"><div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div><p class="sidebar-brand">我的笔记</p><div class="sidebar-items"><span class="sidebar-current"><i data-lucide="sticky-note"></i>全部笔记</span><span><i data-lucide="inbox"></i>未分类</span><span><i data-lucide="check-square"></i>待办事项</span><span><i data-lucide="calendar-days"></i>今天</span><span><i data-lucide="archive"></i>归档</span></div><p class="sidebar-caption">标签</p><div class="sidebar-items sidebar-tags"><span><i data-lucide="sprout"></i>生活观察</span><span><i data-lucide="book-open"></i>阅读</span><span><i data-lucide="code-2"></i>代码片段</span><span><i data-lucide="map"></i>远行计划</span></div><span class="sidebar-foot"><i data-lucide="hard-drive"></i>保存在此浏览器</span></aside>
+        <section class="note-list-pane" aria-label="示例笔记"><div class="note-list-heading"><strong>笔记</strong><button class="small-icon-button" id="new-note" type="button" title="新建笔记" aria-label="新建笔记"><i data-lucide="square-pen"></i></button></div><label class="preview-search"><i data-lucide="search" aria-hidden="true"></i><span class="sr-only">搜索预览笔记</span><input id="preview-search" type="search" placeholder="搜索笔记" autocomplete="off"></label><div class="preview-note-list" id="preview-note-list"></div><p class="preview-empty" id="preview-empty" hidden>没有找到笔记</p></section>
+        <article class="note-editor" aria-live="polite"><div class="editor-top"><span id="editor-tag">生活观察</span><div class="editor-actions"><button class="small-icon-button mobile-new-note" id="mobile-new-note" type="button" title="新建笔记" aria-label="新建笔记"><i data-lucide="square-pen"></i></button><a class="small-icon-button" href="workspace/index.html" title="在阅读空间打开" aria-label="在阅读空间打开"><i data-lucide="expand"></i></a></div></div><div class="editor-content"><h2 id="editor-title">在林间，慢一点</h2><img id="editor-image" src="images/forest.jpg" alt="阳光穿过安静的绿色树林" width="1600" height="500" fetchpriority="high"><p id="editor-body">把注意力从屏幕移开，才发现树影每天都不一样。记下这些微小的变化，也是在为生活留下坐标。</p><div class="editor-note"><p id="editor-quote">不必急着给每一个想法一个结论。</p></div><div class="editor-checks"><span><i data-lucide="circle-check" aria-hidden="true"></i>收集一路上的小发现</span><span><i data-lucide="circle" aria-hidden="true"></i>给今天留一点空白</span></div><span class="editor-hashtag" id="editor-hashtag">#生活观察 #慢下来</span></div><div class="editor-footer"><span id="editor-meta">示例笔记 · 刚刚</span><span>QuietNotes</span></div></article>
+      </div></div>
     </section>
-
-    <figure class="landscape">
-      <img src="images/forest.jpg" alt="林间安静的绿色树木与自然光" width="1600" height="500" fetchpriority="high">
-      <figcaption><span><span class="caption-dot"></span>NOTES FROM THE EVERYDAY</span><span>留一点空白，让思绪慢下来。</span><span class="caption-number">VOL. 01</span></figcaption>
-    </figure>
-
-    <div class="journal-layout">
-      <section class="journal" id="journal" aria-labelledby="journal-title">
-        <div class="section-heading"><h2 id="journal-title">最近写下</h2><span id="result-count" class="result-count" aria-live="polite">6 篇文章</span></div>
-        <div class="journal-toolbar">
-          <div class="category-filters" role="group" aria-label="按分类筛选">
-            <button type="button" class="category-button is-active" data-category="全部" aria-pressed="true">全部</button>
-            <button type="button" class="category-button" data-category="代码" aria-pressed="false">代码</button>
-            <button type="button" class="category-button" data-category="阅读" aria-pressed="false">阅读</button>
-            <button type="button" class="category-button" data-category="日常" aria-pressed="false">日常</button>
-          </div>
-          <form class="search-form" id="search-form" role="search">
-            <label class="sr-only" for="search-input">搜索文章</label>
-            <i data-lucide="search" aria-hidden="true"></i>
-            <input id="search-input" type="search" placeholder="搜索文章" autocomplete="off">
-          </form>
-        </div>
-        <ol class="post-list" id="post-list"></ol>
-        <div class="empty-state" id="empty-state" hidden><i data-lucide="inbox" aria-hidden="true"></i><h3>这里暂时没有文章</h3><p id="empty-message">换一个词，或看看其他分类。</p><button class="text-action" id="reset-filters" type="button">查看全部文章<i data-lucide="arrow-right" aria-hidden="true"></i></button></div>
-        <p class="list-end"><span></span>暂且写到这里<span></span></p>
-      </section>
-
-      <aside class="sidebar">
-        <section class="about-note" id="about" aria-labelledby="about-title">
-          <div class="margin-label"><span class="small-rule"></span>关于这里</div>
-          <h2 id="about-title">你好，我是<br><span>maile123.</span></h2>
-          <p>一页文字，一点好奇心。<br>给想法一个慢慢生长的地方。</p>
-          <div class="about-signature">Keep a little wonder.</div>
-        </section>
-        <section class="article-index" aria-labelledby="index-title">
-          <h2 id="index-title">文章索引<span>INDEX</span></h2>
-          <ol id="article-index"></ol>
-        </section>
-        <div class="sidebar-note"><i data-lucide="feather" aria-hidden="true"></i><p>慢一点也没关系，<br>把注意力还给眼前。</p></div>
-      </aside>
-    </div>
+    <div class="quiet-promise wrapper" aria-label="产品特点"><span><i data-lucide="feather" aria-hidden="true"></i>轻轻记下</span><span><i data-lucide="folder-heart" aria-hidden="true"></i>慢慢整理</span><span><i data-lucide="heart" aria-hidden="true"></i>长久珍藏</span></div>
+    <section class="natural-section wrapper" id="features" aria-labelledby="natural-title"><h2 class="section-title" id="natural-title">写下来，就很自然。</h2><p class="section-subtitle">从一闪而过的念头，到值得反复翻阅的长文。</p><div class="writing-scene"><div class="paper-sheet"><span class="paper-label">给今天的一封短信</span><h3>空白，也是一种可能。</h3><p>清晨的一杯水，半路听到的旋律，<br>还有那些暂时说不清的好想法。</p><p>先写下来，不用急着整理。<br>属于自己的节奏，会在字里行间出现。</p><span class="paper-sign">2026.10.29 &nbsp; / &nbsp; 一个普通的星期四</span></div><div class="scene-caption"><i data-lucide="pen-line" aria-hidden="true"></i><span>从一个字开始。</span></div></div></section>
+    <section class="feature-list wrapper" aria-label="记录与整理">
+      <article class="feature-row"><div class="feature-copy"><span class="feature-kicker blue">落笔，不打断</span><h2>留住想法，<br>不留住负担。</h2><p>一句随手记，一张旅行照片，一段还没想完的文字。用你熟悉的方式，写成自己的笔记。</p><ul><li>标题、引用和清单，各就其位</li><li>图片与文字，自然相处</li><li>从简短片段，长成完整文章</li></ul></div><div class="feature-visual markdown-visual"><span class="visual-label"><i data-lucide="file-pen-line" aria-hidden="true"></i>一页小计划</span><h3>周末，去看一片新风景</h3><p><span class="syntax">##</span> 想做的事</p><div class="sample-check"><i data-lucide="square-check" aria-hidden="true"></i>带上相机与一本书</div><div class="sample-check"><i data-lucide="square" aria-hidden="true"></i>找一家不赶时间的咖啡馆</div><blockquote>“把平常的一天，过得具体一点。”</blockquote><span class="sample-tag">#周末计划</span><span class="drawn-underline" aria-hidden="true"></span></div></article>
+      <article class="feature-row reverse"><div class="feature-copy"><span class="feature-kicker violet">整理，有自己的顺序</span><h2>让零散的灵感，<br>找到彼此。</h2><p>为笔记加一个轻巧的标签。日常、阅读、项目，或者任何你喜欢的名字，都是下一次找到它的线索。</p><ul><li>用标签，而不是复杂的文件夹</li><li>搜索标题和正文，不错过细节</li><li>保留重要片段，随时回来看看</li></ul></div><div class="feature-visual organize-visual"><div class="tag-cloud"><span><i data-lucide="hash"></i>生活观察</span><span><i data-lucide="hash"></i>阅读摘记</span><span><i data-lucide="hash"></i>远行计划</span></div><div class="mini-note"><i data-lucide="leaf" aria-hidden="true"></i><div><strong>在林间，慢一点</strong><p>日常里，也有值得收藏的风景。</p></div><i data-lucide="arrow-up-right" aria-hidden="true"></i></div><div class="mini-note"><i data-lucide="book-open" aria-hidden="true"></i><div><strong>最近读到的一句话</strong><p>把喜欢的句子，留给未来的自己。</p></div><i data-lucide="arrow-up-right" aria-hidden="true"></i></div><div class="mini-note"><i data-lucide="map" aria-hidden="true"></i><div><strong>走一条没走过的路</strong><p>下个周末，不赶路。</p></div><i data-lucide="arrow-up-right" aria-hidden="true"></i></div></div></article>
+    </section>
+    <section class="theme-section" id="themes" aria-labelledby="theme-title"><div class="wrapper"><h2 class="section-title" id="theme-title">有时明亮，有时沉静。</h2><p class="section-subtitle">给此刻的心情，留一个舒服的位置。</p><div class="theme-options" role="group" aria-label="选择笔记预览主题"><button type="button" data-preview-theme="light" aria-pressed="true"><span class="theme-swatch swatch-light"></span>日光</button><button type="button" data-preview-theme="dark" aria-pressed="false"><span class="theme-swatch swatch-dark"></span>石墨</button><button type="button" data-preview-theme="garden" aria-pressed="false"><span class="theme-swatch swatch-garden"></span>林间</button></div><div class="theme-demo" id="theme-demo" data-preview-theme="light"><div class="theme-demo-side"><i data-lucide="notebook-pen" aria-hidden="true"></i><span class="selected"><i data-lucide="sticky-note"></i>全部笔记</span><span><i data-lucide="hash"></i>日常</span><span><i data-lucide="hash"></i>阅读</span></div><div class="theme-demo-note"><span class="theme-demo-date">2026年10月 · 一点生活碎片</span><h3>一页纸，装下刚好的世界。</h3><p>不需要很多东西。一个舒服的位置，一段属于自己的时间，还有愿意写下此刻的心情。</p><p>有些想法值得慢慢说，有些留白也刚刚好。</p><span class="sample-tag">#写给自己</span></div></div></div></section>
+    <section class="more-section wrapper" aria-labelledby="more-title"><h2 class="section-title" id="more-title">简单的，也值得认真。</h2><div class="more-grid"><article><i data-lucide="search" aria-hidden="true"></i><h3>想到，就能找到</h3><p>在示例笔记中搜索一个词，让记忆里的片段重新出现。</p></article><article><i data-lucide="bookmark" aria-hidden="true"></i><h3>喜欢的，留下来</h3><p>在阅读空间里收藏文章，让下一次翻阅少一些寻找。</p></article><article><i data-lucide="hard-drive" aria-hidden="true"></i><h3>在自己的浏览器里</h3><p>新建的预览笔记和主题选择保存在当前浏览器中。</p></article><article><i data-lucide="accessibility" aria-hidden="true"></i><h3>每一种节奏都从容</h3><p>用键盘或触屏，读一段长文，或只停留一小会儿。</p></article></div></section>
+    <section class="start-section wrapper" id="start" aria-labelledby="start-title"><div class="start-copy"><span class="feature-kicker red">一个安静的开始</span><h2 id="start-title">从这一页，<br>走进你的笔记。</h2><p>不必注册。先翻开 maile123 的阅读空间，<br>看看代码、阅读，以及一些平常的小事。</p><a class="primary-button" href="workspace/index.html"><i data-lucide="book-open" aria-hidden="true"></i>打开阅读空间<i data-lucide="arrow-up-right" aria-hidden="true"></i></a><button class="text-button" type="button" id="download-note"><i data-lucide="download" aria-hidden="true"></i>下载一份空白笔记</button></div><div class="start-art" aria-hidden="true"><div class="small-paper"><span>给未来的我</span><div></div><div></div><div></div><i data-lucide="heart"></i><span>慢一点，也没关系。</span></div><i class="art-pencil" data-lucide="pencil"></i></div></section>
+    <section class="faq-section wrapper" id="faq" aria-labelledby="faq-title"><h2 class="section-title" id="faq-title">你可能还想知道</h2><div class="faq-list"><details><summary>这是一个真实的笔记服务吗？<i data-lucide="plus" aria-hidden="true"></i></summary><p>这是 QuietNotes 风格 skill 附带的原创前端示例。首页中的新建笔记、搜索、设备预览与主题选择可以直接体验；阅读空间提供文章、分类、搜索和收藏。</p></details><details><summary>新建的笔记会保存在哪里？<i data-lucide="plus" aria-hidden="true"></i></summary><p>首页创建的笔记仅保存在当前浏览器的本地存储中，不会上传到服务器，也不会自动同步到其他设备。清除浏览器网站数据会移除这些笔记。</p></details><details><summary>手机和平板也能使用吗？<i data-lucide="plus" aria-hidden="true"></i></summary><p>可以。首页和阅读空间会适应不同屏幕大小。首屏的电脑、手机和平板选项用于切换同一份内容的预览布局，不代表独立的原生应用。</p></details><details><summary>可以把这个设计用在自己的项目中吗？<i data-lucide="plus" aria-hidden="true"></i></summary><p>可以按仓库许可证使用和修改。QuietNotes 是原创示例，不隶属于 Bear；项目不包含 Bear 的品牌标志、专有字体、产品截图或官方文案。</p></details></div></section>
   </main>
-
-  <footer class="site-footer page-width"><p>© 2026 <span>maile123</span> · QuietNotes</p><p>本页文章均为原创演示内容，不代表作者真实经历。</p><a href="#top" class="back-top" aria-label="返回页首" title="返回页首"><i data-lucide="arrow-up" aria-hidden="true"></i></a></footer>
-
-  <dialog class="reader-dialog" id="reader-dialog" aria-labelledby="reader-title">
-    <div class="reader-shell">
-      <div class="reader-toolbar"><span class="reader-brand">q.<span>QUIETNOTES</span></span><div><button class="icon-button" id="reader-save" type="button" aria-label="收藏文章" title="收藏文章" aria-pressed="false"><i data-lucide="bookmark" aria-hidden="true"></i></button><button class="icon-button" id="reader-close" type="button" aria-label="关闭文章" title="关闭文章" autofocus><i data-lucide="x" aria-hidden="true"></i></button></div></div>
-      <article class="reader-article"><p class="reader-meta" id="reader-meta"></p><h2 id="reader-title"></h2><p class="reader-deck" id="reader-deck"></p><div class="reader-toc" id="reader-toc"></div><div class="reader-body" id="reader-body"></div><div class="reader-end"><span>写到这里。</span><span>maile123 · 原创演示文章</span></div></article>
-    </div>
-  </dialog>
-  <div class="sr-only" id="status-message" role="status" aria-live="polite"></div>
-  <noscript><p class="noscript-note">文章列表需要启用 JavaScript。</p></noscript>
+  <footer class="site-footer wrapper"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i data-lucide="notebook-pen"></i></span><strong>QuietNotes</strong></a><p>把此刻写下，把生活留下。</p><div><a href="workspace/index.html">maile123 的博客</a><a href="#faq">关于此示例</a><span>© 2026 QuietNotes</span></div></footer>
+  <dialog id="note-dialog" aria-labelledby="note-dialog-title"><form id="note-form"><div class="dialog-heading"><h2 id="note-dialog-title">记下一个新想法</h2><button class="icon-button" type="button" id="close-dialog" title="关闭" aria-label="关闭新建笔记"><i data-lucide="x"></i></button></div><label for="note-title">标题</label><input id="note-title" name="title" required maxlength="60" placeholder="今天，想记下什么？"><label for="note-content">正文</label><textarea id="note-content" name="content" required maxlength="3000" rows="6" placeholder="从一个字开始……"></textarea><p class="dialog-hint">仅保存在当前浏览器中。</p><div class="dialog-actions"><button class="secondary-button" id="cancel-note" type="button">取消</button><button class="primary-button" type="submit"><i data-lucide="check"></i>保存笔记</button></div></form></dialog>
+  <p class="toast" id="toast" role="status" hidden></p>
 </body>
 </html>
